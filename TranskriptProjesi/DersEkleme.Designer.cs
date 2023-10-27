@@ -34,7 +34,7 @@
             txtKod = new TextBox();
             txtKredi = new TextBox();
             label3 = new Label();
-            listBox1 = new ListBox();
+            lstDersler = new ListBox();
             btnEkle = new Button();
             btnSil = new Button();
             btnGuncelle = new Button();
@@ -88,14 +88,14 @@
             label3.TabIndex = 5;
             label3.Text = "Kredi";
             // 
-            // listBox1
+            // lstDersler
             // 
-            listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(205, 20);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(177, 229);
-            listBox1.TabIndex = 6;
+            lstDersler.FormattingEnabled = true;
+            lstDersler.ItemHeight = 15;
+            lstDersler.Location = new Point(205, 20);
+            lstDersler.Name = "lstDersler";
+            lstDersler.Size = new Size(177, 229);
+            lstDersler.TabIndex = 6;
             // 
             // btnEkle
             // 
@@ -105,6 +105,7 @@
             btnEkle.TabIndex = 7;
             btnEkle.Text = "EKLE";
             btnEkle.UseVisualStyleBackColor = true;
+            btnEkle.Click += btnEkle_Click;
             // 
             // btnSil
             // 
@@ -114,6 +115,7 @@
             btnSil.TabIndex = 8;
             btnSil.Text = "SİL";
             btnSil.UseVisualStyleBackColor = true;
+            btnSil.Click += btnSil_Click;
             // 
             // btnGuncelle
             // 
@@ -123,6 +125,7 @@
             btnGuncelle.TabIndex = 9;
             btnGuncelle.Text = "GÜNCELLE";
             btnGuncelle.UseVisualStyleBackColor = true;
+            btnGuncelle.Click += btnGuncelle_Click;
             // 
             // DersEkleme
             // 
@@ -132,7 +135,7 @@
             Controls.Add(btnGuncelle);
             Controls.Add(btnSil);
             Controls.Add(btnEkle);
-            Controls.Add(listBox1);
+            Controls.Add(lstDersler);
             Controls.Add(label3);
             Controls.Add(txtKredi);
             Controls.Add(txtKod);
@@ -148,14 +151,14 @@
         #endregion
 
         private Label label1;
-        private TextBox txtDers;
         private Label label2;
-        private TextBox txtKod;
-        private TextBox txtKredi;
         private Label label3;
-        private ListBox listBox1;
         private Button btnEkle;
         private Button btnSil;
         private Button btnGuncelle;
+        public TextBox txtDers;
+        public TextBox txtKod;
+        public TextBox txtKredi;
+        public ListBox lstDersler;
     }
 }

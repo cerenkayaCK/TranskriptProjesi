@@ -28,18 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
+            flpTranskript1 = new FlowLayoutPanel();
             SuspendLayout();
+            // 
+            // flpTranskript1
+            // 
+            flpTranskript1.Location = new Point(12, 61);
+            flpTranskript1.Name = "flpTranskript1";
+            flpTranskript1.Size = new Size(801, 475);
+            flpTranskript1.TabIndex = 3;
             // 
             // OgrenciTranskript
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(517, 304);
+            ClientSize = new Size(825, 548);
+            Controls.Add(flpTranskript1);
             Name = "OgrenciTranskript";
             Text = "OgrenciTranskript";
             ResumeLayout(false);
         }
 
         #endregion
+        private FlowLayoutPanel flpTranskript1;
     }
 }

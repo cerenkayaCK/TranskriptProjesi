@@ -5,6 +5,7 @@ namespace TranskriptProjesi
         public OgrenciKayýtAnaform()
         {
             InitializeComponent();
+            
         }
 
         public void FormGoster(Form secilenForm)
@@ -40,7 +41,7 @@ namespace TranskriptProjesi
 
         private void öðrenciToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormGoster(new DersEkleme());
+            FormGoster(new DersEkleme());                                                                    
         }
 
         private void transkriptGörüntüleToolStripMenuItem_Click(object sender, EventArgs e)

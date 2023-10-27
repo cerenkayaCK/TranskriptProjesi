@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             cboOgrenciSec = new ComboBox();
-            comboBox2 = new ComboBox();
-            comboBox3 = new ComboBox();
+            cboHarf = new ComboBox();
+            cboDonem = new ComboBox();
             cboDersSec = new ComboBox();
             btnEkle = new Button();
             label1 = new Label();
@@ -41,30 +41,35 @@
             // 
             // cboOgrenciSec
             // 
+            cboOgrenciSec.DropDownStyle = ComboBoxStyle.DropDownList;
             cboOgrenciSec.FormattingEnabled = true;
             cboOgrenciSec.Location = new Point(110, 75);
             cboOgrenciSec.Name = "cboOgrenciSec";
             cboOgrenciSec.Size = new Size(121, 23);
             cboOgrenciSec.TabIndex = 0;
             // 
-            // comboBox2
+            // cboHarf
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(275, 134);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(121, 23);
-            comboBox2.TabIndex = 1;
+            cboHarf.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboHarf.FormattingEnabled = true;
+            cboHarf.Location = new Point(275, 134);
+            cboHarf.Name = "cboHarf";
+            cboHarf.Size = new Size(121, 23);
+            cboHarf.TabIndex = 1;
             // 
-            // comboBox3
+            // cboDonem
             // 
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(110, 134);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(121, 23);
-            comboBox3.TabIndex = 2;
+            cboDonem.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboDonem.FormattingEnabled = true;
+            cboDonem.Location = new Point(110, 134);
+            cboDonem.Name = "cboDonem";
+            cboDonem.Size = new Size(121, 23);
+            cboDonem.TabIndex = 2;
+            cboDonem.Tag = "Donem";
             // 
             // cboDersSec
             // 
+            cboDersSec.DropDownStyle = ComboBoxStyle.DropDownList;
             cboDersSec.FormattingEnabled = true;
             cboDersSec.Location = new Point(275, 75);
             cboDersSec.Name = "cboDersSec";
@@ -79,6 +84,7 @@
             btnEkle.TabIndex = 4;
             btnEkle.Text = "EKLE";
             btnEkle.UseVisualStyleBackColor = true;
+            btnEkle.Click += btnEkle_Click;
             // 
             // label1
             // 
@@ -116,7 +122,7 @@
             label4.TabIndex = 8;
             label4.Text = "Dönem";
             // 
-            // DersEkle
+            // OgrenciDersEkleme
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -127,18 +133,18 @@
             Controls.Add(label1);
             Controls.Add(btnEkle);
             Controls.Add(cboDersSec);
-            Controls.Add(comboBox3);
-            Controls.Add(comboBox2);
+            Controls.Add(cboDonem);
+            Controls.Add(cboHarf);
             Controls.Add(cboOgrenciSec);
-            Name = "DersEkle";
+            Name = "OgrenciDersEkleme";
             Text = "Öğrenci-Puan-Ekleme";
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-        private ComboBox comboBox2;
-        private ComboBox comboBox3;
+        private ComboBox cboHarf;
+        private ComboBox cboDonem;
         private ComboBox cboDersSec;
         private Button btnEkle;
         private Label label1;

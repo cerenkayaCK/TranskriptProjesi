@@ -28,14 +28,29 @@ namespace TranskriptProjesi
             string ad = txtOgrenciAd.Text.Trim();
             string soyad = txtOgrenciSoyad.Text.Trim();
             string numara = txtOgrenciNumarasi.Text.Trim();
-
-            if (string.IsNullOrEmpty(ad) || string.IsNullOrEmpty(soyad) ){ MessageBox.Show("ad veya soyad boş bırakılamaz."); return; }
-
-            duzenlenecekOgrenci.Ad= ad;
-            duzenlenecekOgrenci.Soyad= soyad;
+            if (txtOgrenciAd.Text.Any(c => !char.IsLetter(c) && c != ' '))
+            { MessageBox.Show("Geçersiz İsim!"); return; }
+            if (txtOgrenciSoyad.Text.Any(c => !char.IsLetter(c) && c != ' '))
+            { MessageBox.Show("Geçersiz Soyad!"); return; }
+            if (txtOgrenciNumarasi.Text.Trim().Any(c => !char.IsDigit(c)))
+            { MessageBox.Show("Yalnızca Sayı Girişi Yapınız!"); return; }
+            else if (string.IsNullOrEmpty(txtOgrenciNumarasi.Text) || txtOgrenciNumarasi.Text.Contains(" "))
+            { MessageBox.Show("Öğrenci No Boş Bırakılamaz."); return; }
+            else if (txtOgrenciNumarasi.Text.Length != 10) { MessageBox.Show("Geçersiz numara girişi!"); return; }
+            foreach (var item in OgrenciKayitEkrani.Ogrenciler)
+            {
+                if (item.Numara != null)
+                {
+                    if (item.Numara.Contains(txtOgrenciNumarasi.Text) && (!(item.Numara == txtOgrenciNumarasi.Text)))
+                    { MessageBox.Show("Bu numaraya sahip bir öğrenci var!"); return; }
+                    MessageBox.Show("Öğrenci Güncellendi");                   
+                }
+            }
+            duzenlenecekOgrenci.Ad = ad;
+            duzenlenecekOgrenci.Soyad = soyad;
             duzenlenecekOgrenci.Numara = numara;
             Close();
-          }
+        }
 
         private void btnIptal_Click(object sender, EventArgs e)
         {
@@ -43,3 +58,5 @@ namespace TranskriptProjesi
         }
     }
 }
+
+
